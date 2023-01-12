@@ -1,5 +1,5 @@
 TIMER_DELAY = 1000;
-let changeColorInterval = null;
+let changeBgInterval = null;
 
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
@@ -15,16 +15,16 @@ refs.startBtn.addEventListener('click', onStartBtnClick);
 refs.stopBtn.addEventListener('click', onStopBtnClick);
 
 function onStartBtnClick() {
-  changeColorInterval = setInterval(changeColor, TIMER_DELAY);
+  changeBgInterval = setInterval(changeBg, TIMER_DELAY);
   refs.startBtn.setAttribute('disabled', '');
 }
 
-function changeColor() {
+function changeBg() {
   const color = getRandomHexColor();
   refs.body.style.backgroundColor = color;
 }
 
 function onStopBtnClick() {
-  clearInterval(changeColorInterval);
+  clearInterval(changeBgInterval);
   refs.startBtn.removeAttribute('disabled');
 }
