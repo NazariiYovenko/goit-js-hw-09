@@ -1,4 +1,3 @@
-TIMER_DELAY = 1000;
 let changeBgInterval = null;
 
 function getRandomHexColor() {
@@ -15,7 +14,7 @@ refs.startBtn.addEventListener('click', onStartBtnClick);
 refs.stopBtn.addEventListener('click', onStopBtnClick);
 
 function onStartBtnClick() {
-  changeBgInterval = setInterval(changeBg, TIMER_DELAY);
+  changeBgInterval = setInterval(changeBg, 1000);
   refs.startBtn.setAttribute('disabled', '');
 }
 
