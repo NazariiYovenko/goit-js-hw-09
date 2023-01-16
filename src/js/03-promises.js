@@ -22,7 +22,7 @@ function onFormSubmit(event) {
     elements: { delay, step, amount },
   } = event.currentTarget;
 
-  currentDelay = Number(delay.value);
+  let currentDelay = Number(delay.value);
 
   for (let index = 1; index < Number(amount.value) + 1; index++) {
     createPromise(index, currentDelay)
